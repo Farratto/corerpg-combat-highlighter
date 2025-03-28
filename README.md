@@ -1,6 +1,8 @@
 
 # CoreRPG Combat Highlighter for FGU
 
+<note from Farratto: this is repository is just a placeholder for pre-releases. You can come here to find new versions that have not hit the forge yet.>
+
 A little diddy to make things mo betta when it comes to combat in Fantasy Grounds. It doesn't do much, but what it does I find super handy and will work with any ruleset using the CoreRPG ruleset.
 
 [Download](https://gitlab.com/ccthiel/CoreRPG-Combat-Highlighter/-/jobs/artifacts/latest/file/CoreRPG-Combat-Highlighter.ext?job=build-extension) the latest version of the plugin!
