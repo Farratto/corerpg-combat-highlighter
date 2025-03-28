@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<root>
-	<includefile source="combat_tracker/xml/combat_tracker_host.xml" />
-	<includefile source="combat_tracker/xml/combat_tracker_client.xml" />
-</root>

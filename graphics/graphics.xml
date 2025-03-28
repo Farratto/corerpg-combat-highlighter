@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-
-<root>	
-	<!-- Icon Images -->
-	<icon name="ogremandude" file="graphics/icons/OgreManDude-small.webp" />
-
-	<!-- Frames -->
-	<includefile source="graphics/frames/graphics_frames.xml" />
-</root>
