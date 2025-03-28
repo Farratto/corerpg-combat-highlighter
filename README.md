@@ -1,6 +1,8 @@
 
 # CoreRPG Combat Highlighter for FGU
 
+<note from Farratto: this is repository is just a placeholder for pre-releases. You can come here to find new versions that have not hit the forge yet.>
+
 A little diddy to make things mo betta when it comes to combat in Fantasy Grounds. It doesn't do much, but what it does I find super handy and will work with any ruleset using the CoreRPG ruleset.
 
 From Farratto: This repository does not house the source-code.  This was made for a place for users to obtain pre-releases that have not hit the forge yet.  OgreManDude is the original author and his Gitlab repository (linked below) is where the source-code is stored. \
