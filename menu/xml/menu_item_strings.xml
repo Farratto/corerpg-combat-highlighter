@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<!-- Strings for Menu Item Options -->
+	<string name="option_val_verbose">Verbose</string>
+	<string name="option_val_debug">Debug</string>
+	<string name="option_val_none">None</string>
+	<string name="option_val_current_token">Current Token(s)</string>
+	<string name="option_val_active_ct_token">Active CT Token</string>
+
+	<!-- Strings for Menu Items -->
+	<string name="menu_option_header_corerpg_combat_highlighter">CoreRPG Combat Highlighter</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_debug">Debug Level</string>
+	<string name="menu_option_corerpg_combat_highlighter_disable_functionality_when_dragging">Disable All Functionality When Dragging</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_select_token_on_turn_start">Select Token On Turn Start</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_grey_out_inactive_combatants">Grey Out Inactive Combatants</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_ct_hover_on_select_token">Combat Tracker Hover On Selects Matching Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_ct_hover_on_highlight_token">Combat Tracker Hover On Highlights Matching Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_ct_hover_on_center_on_token">Combat Tracker Hover On Centers on Matching Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_automatically_open_window">Automatically Open Window Containing Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_automatically_focus_on_window">Automatically Focus on Window Containing Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_ct_hover_off_center_on_active_token">Combat Tracker Hover Off Centers on Active Combatant Token</string>
+	<string name="menu_option_header_corerpg_combat_highlighter_ct_hover_off_token_select">Combat Tracker Hover Off Token Select</string>
+	<string name="menu_option_corerpg_combat_highlighter_token_hover_on_auto_scroll_to_ct_entry">Token Hover On Scrolls To Matching CT Entry</string>
+	<string name="menu_option_corerpg_combat_highlighter_token_hover_on_highlight_ct_entry">Token Hover On Highlights Matching CT Entry</string>
+	<string name="menu_option_corerpg_combat_highlighter_token_hover_off_auto_scroll_to_active_ct_entry">Token Hover Off Scrolls Back To Active CT Entry</string>
+</root>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root version="3.3.12.2" release="2">
+	<properties>
+		<name>CoreRPG - Combat Highlighter</name>
+		<version>1.8.1</version>
+		<author>OgreManDude</author>
+		<loadorder>250</loadorder>
+		<description>A little diddy to make life easier by highlighting tokens and combat tracker entries</description>
+		<ruleset>
+			<name>CoreRPG</name>
+		</ruleset>
+		<ruleset>
+			<name>2E</name>
+		</ruleset>
+		<ruleset>
+			<name>3.5E</name>
+		</ruleset>
+		<ruleset>
+			<name>4E</name>
+		</ruleset>
+		<ruleset>
+			<name>5E</name>
+		</ruleset>
+		<ruleset>
+			<name>Cypher System</name>
+		</ruleset>
+		<ruleset>
+			<name>Fate Core</name>
+		</ruleset>
+		<ruleset>
+			<name>Numenera</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG2</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG2-Legacy</name>
+		</ruleset>
+		<ruleset>
+			<name>Conan</name>
+		</ruleset>
+		<ruleset>
+			<name>RolemasterClassic</name>
+		</ruleset>
+		<ruleset>
+			<name>SFRPG</name>
+		</ruleset>
+		<ruleset>
+			<name>The Strange</name>
+		</ruleset>
+		<ruleset>
+			<name>Symbaroum</name>
+		</ruleset>
+		<ruleset>
+			<name>CallOfCthulhu7E</name>
+		</ruleset>
+	</properties>
+
+	<announcement text="CoreRPG Combat Highlighter v1.8.1\r by OgreManDude 2021" font="emotefont" icon="ogremandude" />
+
+	<base>
+		<!-- TokenManager Overriding functions -->
+		<script name="UDGCoreRPGCombatHighlighterTokenManager" file="scripts/token_manager_override.lua" />
+		<script name="UDGCoreRPGCombatHighlighterCombatManager" file="scripts/combat_manager_override.lua" />
+
+		<!-- CombatManager Helper functions -->
+		<script name="UDGCoreRPGCombatHighlighterCombatManagerHelper" file="scripts/combat_manager_helper.lua" />
+
+		<!-- Generic Helper Scripts -->
+		<script name="UDGCoreRPGCombatHighlighterHelper" file="scripts/helper_functions.lua" />
+
+		<!-- Global Constants -->
+		<script name="UDGCoreRPGCombatHighlighterConstants" file="scripts/constants.lua" />
+
+		<!-- Common Highlighter Functions -->
+		<script name="UDGCoreRPGCombatHighlighterCommon" file="scripts/highlighter.lua" />
+
+		<!-- Menu Options -->
+		<includefile source="menu/menu.xml" />
+
+		<!-- Graphics -->
+		<includefile source="graphics/graphics.xml" />
+
+		<!-- Combat Tracker -->
+		<includefile source="combat_tracker/combat_tracker.xml" />
+	</base>
+</root>

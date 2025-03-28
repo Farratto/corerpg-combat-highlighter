@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<windowclass name="ct_entry" merge="join">
+		<script file="combat_tracker/scripts/combat_tracker_host_ct_entry_override.lua" />
+	</windowclass>
+</root>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+	<!-- Script to register all menu items -->
+	<script name="UDGCoreRPGCombatHighlighterMenuItemRegister" file="menu/scripts/register_menu_items.lua" />        		
+
+	<!-- Strings -->
+	<includefile source="menu/xml/menu_item_strings.xml" />
+</root>

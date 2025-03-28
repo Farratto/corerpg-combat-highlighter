@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root>
+	<framedef name="ctentrybox_highlight">
+		<bitmap file="graphics/frames/ctentrybox_highlight.webp" />
+		<offset>37,16,14,17</offset>
+	</framedef>
+
+	<framedef name="ctentrybox_inactive">
+		<bitmap file="graphics/frames/ctentrybox_inactive.webp" />
+		<offset>37,16,14,17</offset>
+	</framedef>
+</root>
