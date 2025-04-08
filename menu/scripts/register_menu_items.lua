@@ -5,6 +5,7 @@
 
 function onInit()
 	UDGCoreRPGCombatHighlighterHelper.verbose({"register_menu_items.lua::onInit()"});
+
 	registerMenuItems();
 end
 

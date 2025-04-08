@@ -4,7 +4,7 @@
 --luacheck: globals onHover addHoverUnderlay updateDisplay handleStatusOnUpdate
 --luacheck: globals UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS
 
-UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS = nil;
+UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS = {};
 
 function onInit()
 	UDGCoreRPGCombatHighlighterHelper.verbose({"combat_tracker_host_ct_entry_override.lua::onInit"});
@@ -71,13 +71,13 @@ function onHover(state)
 			UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight = nil;
 		end
 --[[
-		local nodeCtUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed
+		local nodeCtUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed;
 		if nodeCtUnderlayed and (not state or (nodeCT and nodeCtUnderlayed ~= nodeCT)) then
 			UDGCoreRPGCombatHighlighterCommon.removeUnderlay(nodeCtUnderlayed);
 			UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed = nil;
 		end
 ]]
-		local tokenUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed
+		local tokenUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed;
 		if tokenUnderlayed and (not state or (tokenUnderlayed ~= tokenCT)) then
 			UDGCoreRPGCombatHighlighterCommon.removeUnderlay(tokenUnderlayed);
 			UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed = nil;
@@ -113,9 +113,7 @@ function onHover(state)
 					, AutomaticallyOpenWindow
 				);
 
-				if windowInstance and AutomaticallyFocusOnWindow then
-					windowInstance.bringToFront()
-				end
+				if windowInstance and AutomaticallyFocusOnWindow then windowInstance.bringToFront() end
 
 				if imageControl then
 					UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS = imageControl.getSelectedTokens();
@@ -201,7 +199,7 @@ function onHover(state)
 						end
 					end
 				end
-				UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS = nil;
+				UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS = {};
 			end
 		end
 	end
@@ -209,6 +207,7 @@ function onHover(state)
 	if super and super.onHover then return super.onHover(state) end
 end
 
+--no longer in use.  using addBitmapWidget() instead.  seems faster, looks the same
 function addHoverUnderlay()
 	UDGCoreRPGCombatHighlighterHelper.verbose({"combat_tracker_host_ct_entry_override.lua::addHoverUnderlay()"});
 	local nodeCT = getDatabaseNode();
@@ -227,9 +226,7 @@ end
 function updateDisplay()
 	UDGCoreRPGCombatHighlighterHelper.verbose({"combat_tracker_host_ct_entry_override.lua::updateDisplay()"});
 
-	if super and super.updateDisplay then
-		super.updateDisplay();
-	end
+	if super and super.updateDisplay then super.updateDisplay() end
 
 	local node = getDatabaseNode();
 	local status = DB.getValue(node, "status");

@@ -4,10 +4,10 @@
 	attribution and copyright information.
 -->
 <root version="3.3.12.2" release="2">
-	<announcement text="Combat Highlighter ~v1.8.3-dev~\r by OgreManDude 2021" font="emotefont" icon="ogremandude" />
+	<announcement text="Combat Highlighter v1.8.3\r by OgreManDude 2021" font="emotefont" icon="ogremandude" />
 	<properties>
 		<name>Feature: Combat Highlighter</name>
-		<version>~v-dev~</version>
+		<version>v1.8.3</version>
 		<author>OgreManDude</author>
 		<loadorder>250</loadorder>
 		<description>A little diddy to make life easier by highlighting tokens and combat tracker entries</description>
@@ -93,8 +93,8 @@
 		<script name="PowerCH">
 			function onInit()
 				if PowerUp then
-					PowerUp.registerExtension("Combat Highlighter", "~v-dev~", {
-						['message'] = "~v-dev~: ~update_notes~"
+					PowerUp.registerExtension("Combat Highlighter", "v1.8.3", {
+						['message'] = "v1.8.3: ~update_notes~"
 					});
 				end
 			end

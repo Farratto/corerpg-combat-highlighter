@@ -14,9 +14,7 @@ function getCombatEntryWindowFromToken(token)
 
 	local nodeCT = CombatManager.getCTFromToken(token);
 
-	if nodeCT then
-		return getCombatEntryWindowFromNode(nodeCT);
-	end
+	if nodeCT then return getCombatEntryWindowFromNode(nodeCT) end
 end
 
 function getCombatEntryWindowFromNode(nodeCT)
@@ -24,9 +22,7 @@ function getCombatEntryWindowFromNode(nodeCT)
 		, "nodeCT: ", nodeCT
 	});
 
-	local combatTrackerWindow = nil;
-	local windowPath = nil;
-	local matchingWindow = nil;
+	local combatTrackerWindow, windowPath, matchingWindow;
 
 	if Session.IsHost then
 		combatTrackerWindow = Interface.findWindow("combattracker_host", "combattracker");
@@ -34,7 +30,7 @@ function getCombatEntryWindowFromNode(nodeCT)
 		combatTrackerWindow = Interface.findWindow("combattracker_client", "combattracker");
 	end
 
-	if combatTrackerWindow then windowPath = combatTrackerWindow.list; end;
+	if combatTrackerWindow then windowPath = combatTrackerWindow.list end
 
 	if windowPath and nodeCT then
 		local sNodeID = nodeCT.getPath();

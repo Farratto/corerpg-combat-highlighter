@@ -164,11 +164,17 @@ function onDelete(token)
 	combatants = CombatManager.getCombatantNodes();
 
 	for _,combatant in pairs(combatants) do
-		if DB.getValue(combatant, 'tokenrefid') then
-			local window = UDGCoreRPGCombatHighlighterCombatManagerHelper.getCombatEntryWindowFromNode(combatant);
-			if window then
+		local window = UDGCoreRPGCombatHighlighterCombatManagerHelper.getCombatEntryWindowFromNode(combatant);
+		if window then
+			if not DB.getValue(combatant, 'tokenrefid') then
 				window.updateDisplay();
 				if winCtHighlight == window then winCtHighlight = nil end
+			end
+			if Session.IsHost then
+				local tSelectedTokens = window.UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS
+				for k,tokenMap in ipairs(tSelectedTokens) do
+					if tokenMap == token then window.UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS[k] = nil end
+				end
 			end
 		end
 	end

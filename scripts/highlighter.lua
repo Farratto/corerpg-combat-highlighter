@@ -56,13 +56,14 @@ end
 
 function removeUnderlay(tokenMap)
 	--local tokenCT = CombatManager.getTokenFromCT(nodeCT);
-	--if tokenCT then
+	--if tokenCT and type(tokenCT) == 'tokeninstance' then
+	if type(tokenMap) == 'tokeninstance' then
 		local widgetUnderlay = tokenMap.findWidget('ulay');
 		if widgetUnderlay then widgetUnderlay.destroy() end
 		local widgetUnderlay3D = tokenMap.findWidget('ulay3D');
 		if widgetUnderlay3D then widgetUnderlay3D.destroy() end
 		--tokenCT.setActive(false);
-	--end
+	end
 end
 
 function onCtDelete(nodeCT)
@@ -72,7 +73,23 @@ function onCtDelete(nodeCT)
 	end
 
 	local tokenCT = CombatManager.getTokenFromCT(nodeCT);
-	if tokenCT and tokenCT == UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed then
-		UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed = nil;
+	if tokenCT then
+		if tokenCT == UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed then
+			UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed = nil;
+		end
+
+		if Session.IsHost then
+			local winCT = Interface.findWindow('combattracker_host', 'combattracker');
+			if winCT then
+				for _,win in ipairs(winCT.list.getWindows()) do
+					local tSelectedTokens = win.UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS
+					for k,tokenMap in ipairs(tSelectedTokens) do
+						if tokenMap == tokenCT then
+							win.UDGCORERPGCOMBATHIGHLIGHTERCURRENTLYSELECTEDTOKENS[k] = nil;
+						end
+					end
+				end
+			end
+		end
 	end
 end

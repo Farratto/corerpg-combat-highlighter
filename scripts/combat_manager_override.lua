@@ -38,8 +38,6 @@ function updateCTDisplays()
 	for _,node in pairs(combatants) do
 		local ceWindow = UDGCoreRPGCombatHighlighterCombatManagerHelper.getCombatEntryWindowFromNode(node);
 
-		if ceWindow then
-			ceWindow.updateDisplay();
-		end
+		if ceWindow then ceWindow.updateDisplay() end
 	end
 end

@@ -1,5 +1,5 @@
 ## Combat Highlighter
-**Current Version**: ~dev_version~ \
+**Current Version**: ~v-dev~ \
 **Updated**: ~date~
 
 A little diddy to make things mo betta when it comes to combat in Fantasy Grounds. It doesn't do much, but what it does I find super handy and will work with any ruleset using the CoreRPG ruleset.
@@ -114,6 +114,7 @@ Want to become a member of the Fantasy Grounds Unofficial Developers Guild? [Joi
 
 ### Change Log
 
+* v1.8.3: FIXED: very rare console errors. Increased stability
 * v1.8.3: FIXED: rare console errors; wrong version number
 * v1.8.2: In extension list: renamed to Feature: Combat Highlighter (no functional difference). Removed redundant feature: select token on turn start. Now maintained by Farratto.
 * v1.8.1: Improved stability and reliability of highlighting and clearing highlighting

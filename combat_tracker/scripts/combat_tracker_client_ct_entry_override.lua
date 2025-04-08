@@ -6,7 +6,7 @@
 function onInit()
 	UDGCoreRPGCombatHighlighterHelper.verbose({"combat_tracker_client_override.lua::onInit"});
 
-	if super and super.onInit then super.onInit() end
+	if super and super.onInit then return super.onInit() end
 end
 
 function onHover(state)
@@ -106,5 +106,5 @@ function onHover(state)
 ]]
 	end
 
-	if super and super.onHover then super.onHover(state) end
+	if super and super.onHover then return super.onHover(state) end
 end
