@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+	Please see the LICENSE.txt file included with this distribution for
+	attribution and copyright information.
+-->
+<root>
+	<includefile source="combat_tracker/xml/combat_tracker_host.xml" />
+	<includefile source="combat_tracker/xml/combat_tracker_client.xml" />
+</root>
