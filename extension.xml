@@ -4,7 +4,7 @@
 	attribution and copyright information.
 -->
 <root version="3.3.12.2" release="2">
-	<announcement text="Combat Highlighter ~v1.8.3-dev~\r by OgreManDude 2021" font="emotefont" icon="ogremandude" />
+	<announcement text="Combat Highlighter ~v1.8.5-dev~\r by OgreManDude 2021" font="emotefont" icon="ogremandude" />
 	<properties>
 		<name>Feature: Combat Highlighter</name>
 		<version>~v-dev~</version>

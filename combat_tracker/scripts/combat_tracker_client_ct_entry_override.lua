@@ -52,8 +52,8 @@ function onHover(state)
 ]]
 		--clearing missed clears
 		local winCtHighlight = UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight;
-		if winCtHighlight and winCtHighlight.updateDisplay then
-			winCtHighlight.updateDisplay();
+		if winCtHighlight and winCtHighlight.updateDisplay then --luacheck: ignore 143
+			winCtHighlight.updateDisplay(); --luacheck: ignore 143
 			UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight = nil;
 		end
 --[[

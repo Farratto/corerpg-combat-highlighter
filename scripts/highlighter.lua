@@ -24,7 +24,12 @@ function addHoverUnderlay(tokenCT, nodeCT)
 	if widgetUnderlay3D then widgetUnderlay3D.destroy() end
 
 	local nDU = GameSystem.getDistanceUnitsPerGrid();
-	local nSpace = DB.getValue(nodeCT, 'space', nDU) / nDU;
+
+	--local nSpace = DB.getValue(nodeCT, 'space', nDU) / nDU;
+	local nSpace = DB.getValue(nodeCT, 'currentspace');
+	if not nSpace then nSpace = DB.getValue(nodeCT, 'space', nDU) end
+	nSpace = nSpace / nDU;
+
 	local nHalfSpace = nSpace / 2;
 	local nReach = DB.getValue(nodeCT, 'currentreach');
 	if not nReach then nReach = DB.getValue(nodeCT, 'reach', nDU) end

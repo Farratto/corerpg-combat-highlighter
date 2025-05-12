@@ -1,7 +1,7 @@
 -- Please see the LICENSE.txt file included with this distribution for
 -- attribution and copyright information.
 
---luacheck: globals winCtHighlight nodeCtUnderlayed onHover onDelete originalOnHover originalOnDelete tokenUnderlayed
+--luacheck: globals winCtHighlight nodeCtUnderlayed onHover onDelete originalOnHover tokenUnderlayed
 
 --[[
 nodeLastHover = nil;
@@ -18,7 +18,6 @@ function onInit()
 	originalOnHover = Token.onHover;
 	Token.onHover = onHover;
 
-	originalOnDelete = Token.onDelete;
 	Token.onDelete = onDelete;
 end
 
@@ -178,6 +177,4 @@ function onDelete(token)
 			end
 		end
 	end
-
-	if originalOnDelete then return originalOnDelete(token) end
 end

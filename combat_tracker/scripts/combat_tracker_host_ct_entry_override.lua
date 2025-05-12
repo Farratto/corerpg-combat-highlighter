@@ -66,8 +66,8 @@ function onHover(state)
 ]]
 		--clearing missed clears
 		local winCtHighlight = UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight;
-		if winCtHighlight and winCtHighlight.updateDisplay then
-			winCtHighlight.updateDisplay();
+		if winCtHighlight and winCtHighlight.updateDisplay then --luacheck: ignore 143
+			winCtHighlight.updateDisplay(); --luacheck: ignore 143
 			UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight = nil;
 		end
 --[[
@@ -106,10 +106,10 @@ function onHover(state)
 				"CORERPG_COMBAT_HIGHLIGHTER_CT_HOVER_OFF_CENTER_ON_ACTIVE_TOKEN", "on"
 			);
 
-			local imageControl, windowInstance, _bWindowOpened, _;
+			--local imageControl, windowInstance, _bWindowOpened, _;
 
 			if state then
-				imageControl, windowInstance, _bWindowOpened = ImageManager.getImageControl(tokenCT
+				local imageControl, windowInstance = ImageManager.getImageControl(tokenCT
 					, AutomaticallyOpenWindow
 				);
 
@@ -151,7 +151,7 @@ function onHover(state)
 					end
 				end
 
-				imageControl,_,_bWindowOpened  = ImageManager.getImageControl(tokenCT, AutomaticallyOpenWindow);
+				local imageControl = ImageManager.getImageControl(tokenCT, AutomaticallyOpenWindow);
 
 				if imageControl then
 					if CTHoverOffTokenSelect ~= "off" then imageControl.clearSelectedTokens() end
@@ -162,9 +162,7 @@ function onHover(state)
 								if token then
 									imageControl.selectToken(token.getId(), true);
 									local node = CombatManager.getCTFromToken(token);
-									if node then
-										TokenManager.updateSizeHelper(token, node);
-									end
+									if node then TokenManager.updateSizeHelper(token, node) end
 								end
 							end
 						end
@@ -173,14 +171,14 @@ function onHover(state)
 						if activeCT then
 							local activeToken = CombatManager.getTokenFromCT(activeCT);
 							if activeToken then
-								imageControl, windowInstance, _bWindowOpened  = ImageManager.getImageControl(
-									activeToken, AutomaticallyOpenWindow
+								local cImage, windowInstance = ImageManager.getImageControl(activeToken
+									, AutomaticallyOpenWindow
 								);
 								if windowInstance and AutomaticallyFocusOnWindow then
 									windowInstance.bringToFront();
 								end
 
-								imageControl.selectToken(activeToken.getId(), true);
+								cImage.selectToken(activeToken.getId(), true);
 								TokenManager.updateSizeHelper(activeToken, activeCT);
 							end
 						end
@@ -191,10 +189,8 @@ function onHover(state)
 						if activeCT then
 							local activeToken = CombatManager.getTokenFromCT(activeCT);
 							if activeToken then
-								imageControl,_,_bWindowOpened  = ImageManager.getImageControl(activeToken
-									, AutomaticallyOpenWindow
-								);
-								imageControl.setViewpoint(activeToken.getPosition());
+								local cImage = ImageManager.getImageControl(activeToken, AutomaticallyOpenWindow);
+								cImage.setViewpoint(activeToken.getPosition());
 							end
 						end
 					end

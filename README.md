@@ -114,7 +114,8 @@ Want to become a member of the Fantasy Grounds Unofficial Developers Guild? [Joi
 
 ### Change Log
 
-* v1.8.3: FIXED: very rare console errors. Increased stability
+* v1.8.5: FIXED: was not correctly evaluating sizes with modified sizes from Go Big or Go Gnome
+* v1.8.4: FIXED: very rare console errors. Increased stability
 * v1.8.3: FIXED: rare console errors; wrong version number
 * v1.8.2: In extension list: renamed to Feature: Combat Highlighter (no functional difference). Removed redundant feature: select token on turn start. Now maintained by Farratto.
 * v1.8.1: Improved stability and reliability of highlighting and clearing highlighting
