@@ -22,47 +22,14 @@ function onHover(state)
 		local nodeCT = getDatabaseNode();
 		local tokenCT = CombatManager.getTokenFromCT(nodeCT);
 
---[[
-		local missedExit;
-		local nodeLastHover = UDGCoreRPGCombatHighlighterTokenManager.nodeLastHover;
-		local bLastHoverEnter = UDGCoreRPGCombatHighlighterTokenManager.bLastHoverEnter;
-		local nLastId = UDGCoreRPGCombatHighlighterTokenManager.nLastId;
-		if not state then --we are exiting
-			if bLastHoverEnter and nodeLastHover ~= nodeCT then --last ping was an entrance
-				--and was not the entrance we are currently exiting
-				--we missed the entrance of current exit
-				--we may have missed an exit and an entrance
-				if nLastId then --missed exit was a token
-					--also checks if token still exists
-					missedExit = Token.getToken(DB.getPath(nodeLastHover), nLastId);
-				end
-			end
-		else --we are entering
-			--last ping was also enter, which means we missed an exit
-			if bLastHoverEnter then
-				if nLastId then --missed exit was a token
-					--also checks if token still exists
-					missedExit = Token.getToken(DB.getPath(nodeLastHover), nLastId);
-				end
-			end
-		end
-		if missedExit then
-			UDGCoreRPGCombatHighlighterTokenManager.onHover(missedExit, false);
-		end
-]]
 		--clearing missed clears
 		local winCtHighlight = UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight;
-		if winCtHighlight and winCtHighlight.updateDisplay then --luacheck: ignore 143
+		if winCtHighlight and type(winCtHighlight) == 'windowinstance'
+			and winCtHighlight.updateDisplay --luacheck: ignore 143
+		then
 			winCtHighlight.updateDisplay(); --luacheck: ignore 143
 			UDGCoreRPGCombatHighlighterTokenManager.winCtHighlight = nil;
 		end
---[[
-		local nodeCtUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed
-		if nodeCtUnderlayed and (not state or (nodeCT and nodeCtUnderlayed ~= nodeCT)) then
-			UDGCoreRPGCombatHighlighterCommon.removeUnderlay(nodeCtUnderlayed);
-			UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed = nil;
-		end
-]]
 		local tokenUnderlayed = UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed
 		if tokenUnderlayed and (not state or (tokenUnderlayed ~= tokenCT)) then
 			UDGCoreRPGCombatHighlighterCommon.removeUnderlay(tokenUnderlayed);
@@ -75,22 +42,13 @@ function onHover(state)
 			);
 
 			if state then
-				--local imageControl = ImageManager.getImageControl(tokenCT);
 
-				--if imageControl and CTHoverOnHighlightToken then
 				if CTHoverOnHighlightToken then
 					UDGCoreRPGCombatHighlighterCommon.addHoverUnderlay(tokenCT, nodeCT);
-					--UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed = nodeCT;
 					UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed = tokenCT;
 				end
 			else
 				if CTHoverOnHighlightToken then
---[[
-					UDGCoreRPGCombatHighlighterCommon.removeUnderlay(nodeCT);
-					if UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed == nodeCT then
-						UDGCoreRPGCombatHighlighterTokenManager.nodeCtUnderlayed = nil;
-					end
-]]
 					UDGCoreRPGCombatHighlighterCommon.removeUnderlay(tokenCT);
 					if UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed == tokenCT then
 						UDGCoreRPGCombatHighlighterTokenManager.tokenUnderlayed = nil;
@@ -98,12 +56,6 @@ function onHover(state)
 				end
 			end
 		end
-
---[[
-		UDGCoreRPGCombatHighlighterTokenManager.nodeLastHover = nodeCT;
-		UDGCoreRPGCombatHighlighterTokenManager.bLastHoverEnter = state;
-		UDGCoreRPGCombatHighlighterTokenManager.nLastId = nil;
-]]
 	end
 
 	if super and super.onHover then return super.onHover(state) end

@@ -17,7 +17,7 @@ function customTurnStart(nodeCT)
 
 	local selectTokenOnTurnStart = OptionsManager.isOption("CORERPG_COMBAT_HIGHLIGHTER_SELECT_TOKEN_ON_TURN_START", "on");
 
-	if selectTokenOnTurnStart  then
+	if selectTokenOnTurnStart then
 		local tokenCT = CombatManager.getTokenFromCT(nodeCT);
 
 		if tokenCT then

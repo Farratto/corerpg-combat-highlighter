@@ -25,7 +25,6 @@ function addHoverUnderlay(tokenCT, nodeCT)
 
 	local nDU = GameSystem.getDistanceUnitsPerGrid();
 
-	--local nSpace = DB.getValue(nodeCT, 'space', nDU) / nDU;
 	local nSpace = DB.getValue(nodeCT, 'currentspace');
 	if not nSpace then nSpace = DB.getValue(nodeCT, 'space', nDU) end
 	nSpace = nSpace / nDU;
@@ -55,19 +54,14 @@ function addHoverUnderlay(tokenCT, nodeCT)
 	};
 	local wgt3D = tokenCT.addBitmapWidget(tWidget3D);
 	if wgt3D then wgt3D.sendToBack() end
-
-	--tokenCT.setActive(true);
 end
 
 function removeUnderlay(tokenMap)
-	--local tokenCT = CombatManager.getTokenFromCT(nodeCT);
-	--if tokenCT and type(tokenCT) == 'tokeninstance' then
 	if type(tokenMap) == 'tokeninstance' then
 		local widgetUnderlay = tokenMap.findWidget('ulay');
 		if widgetUnderlay then widgetUnderlay.destroy() end
 		local widgetUnderlay3D = tokenMap.findWidget('ulay3D');
 		if widgetUnderlay3D then widgetUnderlay3D.destroy() end
-		--tokenCT.setActive(false);
 	end
 end
 

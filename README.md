@@ -8,8 +8,7 @@ A little diddy to make things mo betta when it comes to combat in Fantasy Ground
 
 Install from the [Fantasy Grounds Forge](https://forge.fantasygrounds.com/shop/items/289/view). \
 You can find the source code at Farratto's [GitHub](https://github.com/Farratto/corerpg-combat-highlighter). \
-You can ask questions at the [Fantasy Grounds Forum](https://www.fantasygrounds.com/forums/showthread.php?66336). \
-[Discord Channel](https://discord.com/channels/812870526455250945/813173777663131659)
+You can ask questions at the [Fantasy Grounds Forum](https://www.fantasygrounds.com/forums/showthread.php?66336).
 
 ### Details
 
@@ -114,6 +113,7 @@ Want to become a member of the Fantasy Grounds Unofficial Developers Guild? [Joi
 
 ### Change Log
 
+* v1.8.6: FIXED: rare errors on client side.
 * v1.8.5: FIXED: was not correctly evaluating sizes with modified sizes from Go Big or Go Gnome
 * v1.8.4: FIXED: very rare console errors. Increased stability
 * v1.8.3: FIXED: rare console errors; wrong version number
