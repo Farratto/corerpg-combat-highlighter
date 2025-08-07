@@ -113,6 +113,7 @@ Want to become a member of the Fantasy Grounds Unofficial Developers Guild? [Joi
 
 ### Change Log
 
+* v1.8.7: FIXED: error when deleting CT entries.
 * v1.8.6: FIXED: rare errors on client side.
 * v1.8.5: FIXED: was not correctly evaluating sizes with modified sizes from Go Big or Go Gnome
 * v1.8.4: FIXED: very rare console errors. Increased stability

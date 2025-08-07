@@ -31,7 +31,8 @@ function onHover(tokenMap, bOver) --if bOver is false, token is leaving hover ar
 		end
 
 		--clearing missed clears
-		if winCtHighlight and type(winCtHighlight) == 'windowinstance'
+		--if winCtHighlight and type(winCtHighlight) == 'windowinstance'
+		if winCtHighlight and Interface.isWindowClass(winCtHighlight)
 			and (not ceWindow or ceWindow ~= winCtHighlight)
 			and winCtHighlight.updateDisplay
 		then
